@@ -1,0 +1,26 @@
+{
+    "java.configuration.updateBuildConfiguration": "automatic",
+
+    "files.exclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/**": true,
+        "**/.hg/store/**": true,
+        "gradle":true,
+        "gradlew":true,
+        "*.cmd":true,
+        "*.bat":true,
+        "**/.gitignore":true,
+        "**/.project":true,
+        "**/.classpath/**":true,
+        "**/.editorconfig/**":true,
+        "**/.settings":true,
+        "**/.angular/**":true,
+        "**/.md":true,
+        "**/tmp":true,
+        "**/bin":true,
+        "**/build":true,
+        "**/.vscode":true,
+        "**/.gradle":true,
+        "README.md":true
+}
