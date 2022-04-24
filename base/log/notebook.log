@@ -1,0 +1,214 @@
+2022-04-24 12:29:42.667  INFO 4936 --- [Test worker] ru.base.BaseTest                         : Starting BaseTest using Java 17.0.2 on SENIOR with PID 4936 (started by Job in F:\projects\java\workspace\notebook\base)
+2022-04-24 12:29:42.670 DEBUG 4936 --- [Test worker] ru.base.BaseTest                         : Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-04-24 12:29:42.672  INFO 4936 --- [Test worker] ru.base.BaseTest                         : No active profile set, falling back to 1 default profile: "default"
+2022-04-24 12:29:45.268  INFO 4936 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-04-24 12:29:45.454  INFO 4936 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 160 ms. Found 1 JPA repository interfaces.
+2022-04-24 12:29:47.609  INFO 4936 --- [Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2022-04-24 12:29:47.638  INFO 4936 --- [Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-24 12:29:47.643  INFO 4936 --- [Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-24 12:29:48.238  INFO 4936 --- [Test worker] o.a.c.c.C.[Tomcat].[localhost].[/base]   : Initializing Spring embedded WebApplicationContext
+2022-04-24 12:29:48.238  INFO 4936 --- [Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5508 ms
+2022-04-24 12:29:48.624  INFO 4936 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-04-24 12:29:49.377  INFO 4936 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-04-24 12:29:49.837  INFO 4936 --- [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-04-24 12:29:50.018  INFO 4936 --- [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-04-24 12:29:50.646  INFO 4936 --- [Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-04-24 12:29:51.182  INFO 4936 --- [Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-04-24 12:29:53.883  INFO 4936 --- [Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-04-24 12:29:54.136  INFO 4936 --- [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-04-24 12:29:55.503  WARN 4936 --- [Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-04-24 12:29:55.813 DEBUG 4936 --- [Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 12 mappings in 'requestMappingHandlerMapping'
+2022-04-24 12:29:56.287 DEBUG 4936 --- [Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**] in 'resourceHandlerMapping'
+2022-04-24 12:29:56.467 DEBUG 4936 --- [Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-04-24 12:29:56.592 DEBUG 4936 --- [Test worker] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-04-24 12:29:58.180  INFO 4936 --- [Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 60894 (http) with context path '/base'
+2022-04-24 12:29:58.214  INFO 4936 --- [Test worker] ru.base.BaseTest                         : Started BaseTest in 16.493 seconds (JVM running for 20.096)
+2022-04-24 12:29:59.263  INFO 4936 --- [Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using geckodriver 0.31.0 (resolved driver for Firefox 99)
+2022-04-24 12:29:59.314  INFO 4936 --- [Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.gecko.driver as C:\Users\Job\.cache\selenium\geckodriver\win64\0.31.0\geckodriver.exe
+2022-04-24 12:30:05.864  INFO 4936 --- [Forwarding newSession on session null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2022-04-24 12:30:06.240  INFO 4936 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/base]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-24 12:30:06.241  INFO 4936 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-24 12:30:06.242 DEBUG 4936 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-04-24 12:30:06.243 DEBUG 4936 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-04-24 12:30:06.244 DEBUG 4936 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-04-24 12:30:06.246 DEBUG 4936 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@99948fe
+2022-04-24 12:30:06.247 DEBUG 4936 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@6d6ddeb5
+2022-04-24 12:30:06.248 DEBUG 4936 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-04-24 12:30:06.248  INFO 4936 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2022-04-24 12:30:06.299 DEBUG 4936 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/base/", parameters={}
+2022-04-24 12:30:06.314 DEBUG 4936 --- [http-nio-auto-1-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to ru.base.web.RootController#getUsers(HttpServletRequest)
+2022-04-24 12:30:06.427 DEBUG 4936 --- [http-nio-auto-1-exec-1] o.s.web.servlet.view.RedirectView        : View [RedirectView], model {}
+2022-04-24 12:30:06.438 DEBUG 4936 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2022-04-24 12:30:06.454 DEBUG 4936 --- [http-nio-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/base/index.html", parameters={}
+2022-04-24 12:30:06.462 DEBUG 4936 --- [http-nio-auto-1-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [ServletContext [/resources/], classpath [static/]]
+2022-04-24 12:30:06.506 DEBUG 4936 --- [http-nio-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-04-24 12:30:07.270 DEBUG 4936 --- [http-nio-auto-1-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/base/styles.ef46db3751d8e999.css", parameters={}
+2022-04-24 12:30:07.275 DEBUG 4936 --- [http-nio-auto-1-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [ServletContext [/resources/], classpath [static/]]
+2022-04-24 12:30:07.279 DEBUG 4936 --- [http-nio-auto-1-exec-3] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2022-04-24 12:30:07.279 DEBUG 4936 --- [http-nio-auto-1-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2022-04-24 12:30:07.280 DEBUG 4936 --- [http-nio-auto-1-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/base/main.eee541154854c05b.js", parameters={}
+2022-04-24 12:30:07.283 DEBUG 4936 --- [http-nio-auto-1-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [ServletContext [/resources/], classpath [static/]]
+2022-04-24 12:30:07.285 DEBUG 4936 --- [http-nio-auto-1-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/base/runtime.27845ceb5aedcb1f.js", parameters={}
+2022-04-24 12:30:07.289 DEBUG 4936 --- [http-nio-auto-1-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/base/polyfills.2bc674d83458c252.js", parameters={}
+2022-04-24 12:30:07.289 DEBUG 4936 --- [http-nio-auto-1-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [ServletContext [/resources/], classpath [static/]]
+2022-04-24 12:30:07.290 DEBUG 4936 --- [http-nio-auto-1-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [ServletContext [/resources/], classpath [static/]]
+2022-04-24 12:30:07.300 DEBUG 4936 --- [http-nio-auto-1-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-04-24 12:30:07.305 DEBUG 4936 --- [http-nio-auto-1-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-04-24 12:30:07.308 DEBUG 4936 --- [http-nio-auto-1-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-04-24 12:30:07.312 DEBUG 4936 --- [http-nio-auto-1-exec-3] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/base/error", parameters={}
+2022-04-24 12:30:07.315 DEBUG 4936 --- [http-nio-auto-1-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-04-24 12:30:07.373 DEBUG 4936 --- [http-nio-auto-1-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.1', given [text/css, */*;q=0.1] and supported [application/json, application/*+json]
+2022-04-24 12:30:07.375 DEBUG 4936 --- [http-nio-auto-1-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Sun Apr 24 12:30:07 MSK 2022, status=404, error=Not Found, path=/base/styles.ef46db3751d8 (truncated)...]
+2022-04-24 12:30:07.497 DEBUG 4936 --- [http-nio-auto-1-exec-3] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2022-04-24 12:30:07.763 DEBUG 4936 --- [http-nio-auto-1-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/base/favicon.ico", parameters={}
+2022-04-24 12:30:07.766 DEBUG 4936 --- [http-nio-auto-1-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [ServletContext [/resources/], classpath [static/]]
+2022-04-24 12:30:07.861 DEBUG 4936 --- [http-nio-auto-1-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-04-24 12:30:11.899  INFO 4936 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-04-24 12:30:11.903  INFO 4936 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-04-24 12:30:11.923  INFO 4936 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-04-24 12:31:06.920  INFO 12500 --- [main] ru.base.StartWebApplication              : Starting StartWebApplication using Java 17.0.2 on SENIOR with PID 12500 (F:\projects\java\workspace\notebook\base\build\classes\java\main started by Job in F:\projects\java\workspace\notebook\base)
+2022-04-24 12:31:06.926 DEBUG 12500 --- [main] ru.base.StartWebApplication              : Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-04-24 12:31:06.927  INFO 12500 --- [main] ru.base.StartWebApplication              : No active profile set, falling back to 1 default profile: "default"
+2022-04-24 12:31:08.485  INFO 12500 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-04-24 12:31:08.598  INFO 12500 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 95 ms. Found 1 JPA repository interfaces.
+2022-04-24 12:31:09.695  INFO 12500 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-24 12:31:09.711  INFO 12500 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-24 12:31:09.712  INFO 12500 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-24 12:31:09.978  INFO 12500 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/base]   : Initializing Spring embedded WebApplicationContext
+2022-04-24 12:31:09.979  INFO 12500 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2940 ms
+2022-04-24 12:31:10.109  INFO 12500 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-04-24 12:31:10.509  INFO 12500 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-04-24 12:31:10.705  INFO 12500 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-04-24 12:31:10.807  INFO 12500 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-04-24 12:31:11.234  INFO 12500 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-04-24 12:31:11.546  INFO 12500 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-04-24 12:31:13.136  INFO 12500 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-04-24 12:31:13.318  INFO 12500 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-04-24 12:31:13.844  WARN 12500 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-04-24 12:31:13.957 DEBUG 12500 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 12 mappings in 'requestMappingHandlerMapping'
+2022-04-24 12:31:13.993 DEBUG 12500 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**] in 'resourceHandlerMapping'
+2022-04-24 12:31:14.049 DEBUG 12500 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022-04-24 12:31:14.102 DEBUG 12500 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2022-04-24 12:31:14.436  INFO 12500 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/base'
+2022-04-24 12:31:14.450  INFO 12500 --- [main] ru.base.StartWebApplication              : Started StartWebApplication in 8.268 seconds (JVM running for 9.105)
+2022-04-24 12:31:57.005  INFO 12500 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/base]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-24 12:31:57.006  INFO 12500 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-24 12:31:57.006 DEBUG 12500 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2022-04-24 12:31:57.006 DEBUG 12500 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2022-04-24 12:31:57.007 DEBUG 12500 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2022-04-24 12:31:57.008 DEBUG 12500 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@2f2f92f
+2022-04-24 12:31:57.008 DEBUG 12500 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@630c3af3
+2022-04-24 12:31:57.008 DEBUG 12500 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-04-24 12:31:57.009  INFO 12500 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-04-24 12:31:57.025 DEBUG 12500 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/base/app/getusers", parameters={}
+2022-04-24 12:31:57.037 DEBUG 12500 --- [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [ServletContext [/resources/], classpath [static/]]
+2022-04-24 12:31:57.044 DEBUG 12500 --- [http-nio-8080-exec-1] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2022-04-24 12:31:57.045 DEBUG 12500 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2022-04-24 12:31:57.054 DEBUG 12500 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/base/error", parameters={}
+2022-04-24 12:31:57.056 DEBUG 12500 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2022-04-24 12:31:57.110 DEBUG 12500 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2022-04-24 12:31:58.537 DEBUG 12500 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/base/app/getusers", parameters={}
+2022-04-24 12:31:58.539 DEBUG 12500 --- [http-nio-8080-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [ServletContext [/resources/], classpath [static/]]
+2022-04-24 12:31:58.540 DEBUG 12500 --- [http-nio-8080-exec-3] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2022-04-24 12:31:58.541 DEBUG 12500 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2022-04-24 12:31:58.542 DEBUG 12500 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/base/error", parameters={}
+2022-04-24 12:31:58.543 DEBUG 12500 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2022-04-24 12:31:58.550 DEBUG 12500 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2022-04-24 12:32:01.125 DEBUG 12500 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/base/", parameters={}
+2022-04-24 12:32:01.126 DEBUG 12500 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to ru.base.web.RootController#getUsers(HttpServletRequest)
+2022-04-24 12:32:01.133 DEBUG 12500 --- [http-nio-8080-exec-5] o.s.web.servlet.view.RedirectView        : View [RedirectView], model {}
+2022-04-24 12:32:01.137 DEBUG 12500 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2022-04-24 12:32:01.145 DEBUG 12500 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/base/index.html", parameters={}
+2022-04-24 12:32:01.149 DEBUG 12500 --- [http-nio-8080-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [ServletContext [/resources/], classpath [static/]]
+2022-04-24 12:32:01.168 DEBUG 12500 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-04-24 12:32:01.225 DEBUG 12500 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/base/styles.ef46db3751d8e999.css", parameters={}
+2022-04-24 12:32:01.226 DEBUG 12500 --- [http-nio-8080-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [ServletContext [/resources/], classpath [static/]]
+2022-04-24 12:32:01.233 DEBUG 12500 --- [http-nio-8080-exec-7] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2022-04-24 12:32:01.234 DEBUG 12500 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2022-04-24 12:32:01.235 DEBUG 12500 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/base/error", parameters={}
+2022-04-24 12:32:01.236 DEBUG 12500 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2022-04-24 12:32:01.235 DEBUG 12500 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/base/runtime.27845ceb5aedcb1f.js", parameters={}
+2022-04-24 12:32:01.241 DEBUG 12500 --- [http-nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [ServletContext [/resources/], classpath [static/]]
+2022-04-24 12:32:01.246 DEBUG 12500 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/base/polyfills.2bc674d83458c252.js", parameters={}
+2022-04-24 12:32:01.250 DEBUG 12500 --- [http-nio-8080-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [ServletContext [/resources/], classpath [static/]]
+2022-04-24 12:32:01.258 DEBUG 12500 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/base/main.eee541154854c05b.js", parameters={}
+2022-04-24 12:32:01.259 DEBUG 12500 --- [http-nio-8080-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [ServletContext [/resources/], classpath [static/]]
+2022-04-24 12:32:01.274 DEBUG 12500 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-04-24 12:32:01.285 DEBUG 12500 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-04-24 12:32:01.291 DEBUG 12500 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-04-24 12:32:01.292 DEBUG 12500 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.1', given [text/css, */*;q=0.1] and supported [application/json, application/*+json]
+2022-04-24 12:32:01.294 DEBUG 12500 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Sun Apr 24 12:32:01 MSK 2022, status=404, error=Not Found, path=/base/styles.ef46db3751d8 (truncated)...]
+2022-04-24 12:32:01.378 DEBUG 12500 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2022-04-24 12:32:01.791 DEBUG 12500 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/base/favicon.ico", parameters={}
+2022-04-24 12:32:01.793 DEBUG 12500 --- [http-nio-8080-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [ServletContext [/resources/], classpath [static/]]
+2022-04-24 12:32:01.826 DEBUG 12500 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-04-24 12:32:04.206 DEBUG 12500 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/base/rest/admin/users", parameters={}
+2022-04-24 12:32:04.207 DEBUG 12500 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to ru.base.web.user.AdminRestController#getAll()
+2022-04-24 12:32:04.209  INFO 12500 --- [http-nio-8080-exec-2] ru.base.web.user.AdminRestController     : It's work!
+2022-04-24 12:32:04.210  INFO 12500 --- [http-nio-8080-exec-2] ru.base.web.user.AdminRestController     : getAll
+2022-04-24 12:32:04.387 DEBUG 12500 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json]
+2022-04-24 12:32:04.400 DEBUG 12500 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [[User (id=100000, email=user@yandex.ru, name=User, enabled=true, roles=[ROLE_USER]), User (id=100001 (truncated)...]
+2022-04-24 12:32:04.429 DEBUG 12500 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-04-24 12:32:06.438 DEBUG 12500 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/base/rest/admin/users", parameters={}
+2022-04-24 12:32:06.439 DEBUG 12500 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to ru.base.web.user.AdminRestController#getAll()
+2022-04-24 12:32:06.439  INFO 12500 --- [http-nio-8080-exec-3] ru.base.web.user.AdminRestController     : It's work!
+2022-04-24 12:32:06.439  INFO 12500 --- [http-nio-8080-exec-3] ru.base.web.user.AdminRestController     : getAll
+2022-04-24 12:32:06.446 DEBUG 12500 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json]
+2022-04-24 12:32:06.448 DEBUG 12500 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [[User (id=100000, email=user@yandex.ru, name=User, enabled=true, roles=[ROLE_USER]), User (id=100001 (truncated)...]
+2022-04-24 12:32:06.449 DEBUG 12500 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-04-24 12:32:07.549 DEBUG 12500 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/base/rest/admin/users", parameters={}
+2022-04-24 12:32:07.550 DEBUG 12500 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to ru.base.web.user.AdminRestController#getAll()
+2022-04-24 12:32:07.550  INFO 12500 --- [http-nio-8080-exec-4] ru.base.web.user.AdminRestController     : It's work!
+2022-04-24 12:32:07.551  INFO 12500 --- [http-nio-8080-exec-4] ru.base.web.user.AdminRestController     : getAll
+2022-04-24 12:32:07.556 DEBUG 12500 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json]
+2022-04-24 12:32:07.557 DEBUG 12500 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [[User (id=100000, email=user@yandex.ru, name=User, enabled=true, roles=[ROLE_USER]), User (id=100001 (truncated)...]
+2022-04-24 12:32:07.559 DEBUG 12500 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-04-24 12:32:15.935 DEBUG 12500 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/base/rest/admin/users", parameters={}
+2022-04-24 12:32:15.937 DEBUG 12500 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to ru.base.web.user.AdminRestController#getAll()
+2022-04-24 12:32:15.937  INFO 12500 --- [http-nio-8080-exec-5] ru.base.web.user.AdminRestController     : It's work!
+2022-04-24 12:32:15.938  INFO 12500 --- [http-nio-8080-exec-5] ru.base.web.user.AdminRestController     : getAll
+2022-04-24 12:32:15.945 DEBUG 12500 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json]
+2022-04-24 12:32:15.946 DEBUG 12500 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [[User (id=100000, email=user@yandex.ru, name=User, enabled=true, roles=[ROLE_USER]), User (id=100001 (truncated)...]
+2022-04-24 12:32:15.947 DEBUG 12500 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-04-24 12:32:17.220 DEBUG 12500 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/base/rest/admin/users", parameters={}
+2022-04-24 12:32:17.221 DEBUG 12500 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to ru.base.web.user.AdminRestController#getAll()
+2022-04-24 12:32:17.223  INFO 12500 --- [http-nio-8080-exec-6] ru.base.web.user.AdminRestController     : It's work!
+2022-04-24 12:32:17.223  INFO 12500 --- [http-nio-8080-exec-6] ru.base.web.user.AdminRestController     : getAll
+2022-04-24 12:32:17.231 DEBUG 12500 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json]
+2022-04-24 12:32:17.231 DEBUG 12500 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [[User (id=100000, email=user@yandex.ru, name=User, enabled=true, roles=[ROLE_USER]), User (id=100001 (truncated)...]
+2022-04-24 12:32:17.232 DEBUG 12500 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-04-24 12:32:18.250 DEBUG 12500 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/base/rest/admin/users", parameters={}
+2022-04-24 12:32:18.251 DEBUG 12500 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to ru.base.web.user.AdminRestController#getAll()
+2022-04-24 12:32:18.251  INFO 12500 --- [http-nio-8080-exec-8] ru.base.web.user.AdminRestController     : It's work!
+2022-04-24 12:32:18.251  INFO 12500 --- [http-nio-8080-exec-8] ru.base.web.user.AdminRestController     : getAll
+2022-04-24 12:32:18.260 DEBUG 12500 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json]
+2022-04-24 12:32:18.262 DEBUG 12500 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [[User (id=100000, email=user@yandex.ru, name=User, enabled=true, roles=[ROLE_USER]), User (id=100001 (truncated)...]
+2022-04-24 12:32:18.263 DEBUG 12500 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-04-24 12:32:20.671 DEBUG 12500 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/base/rest/admin/users", parameters={}
+2022-04-24 12:32:20.672 DEBUG 12500 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to ru.base.web.user.AdminRestController#getAll()
+2022-04-24 12:32:20.673  INFO 12500 --- [http-nio-8080-exec-10] ru.base.web.user.AdminRestController     : It's work!
+2022-04-24 12:32:20.673  INFO 12500 --- [http-nio-8080-exec-10] ru.base.web.user.AdminRestController     : getAll
+2022-04-24 12:32:20.681 DEBUG 12500 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json]
+2022-04-24 12:32:20.681 DEBUG 12500 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [[User (id=100000, email=user@yandex.ru, name=User, enabled=true, roles=[ROLE_USER]), User (id=100001 (truncated)...]
+2022-04-24 12:32:20.682 DEBUG 12500 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-04-24 12:32:21.704 DEBUG 12500 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/base/rest/admin/users", parameters={}
+2022-04-24 12:32:21.705 DEBUG 12500 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to ru.base.web.user.AdminRestController#getAll()
+2022-04-24 12:32:21.706  INFO 12500 --- [http-nio-8080-exec-9] ru.base.web.user.AdminRestController     : It's work!
+2022-04-24 12:32:21.707  INFO 12500 --- [http-nio-8080-exec-9] ru.base.web.user.AdminRestController     : getAll
+2022-04-24 12:32:21.718 DEBUG 12500 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json]
+2022-04-24 12:32:21.719 DEBUG 12500 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[User (id=100000, email=user@yandex.ru, name=User, enabled=true, roles=[ROLE_USER]), User (id=100001 (truncated)...]
+2022-04-24 12:32:21.721 DEBUG 12500 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-04-24 12:32:22.652 DEBUG 12500 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/base/rest/admin/users", parameters={}
+2022-04-24 12:32:22.652 DEBUG 12500 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to ru.base.web.user.AdminRestController#getAll()
+2022-04-24 12:32:22.653  INFO 12500 --- [http-nio-8080-exec-7] ru.base.web.user.AdminRestController     : It's work!
+2022-04-24 12:32:22.653  INFO 12500 --- [http-nio-8080-exec-7] ru.base.web.user.AdminRestController     : getAll
+2022-04-24 12:32:22.660 DEBUG 12500 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json]
+2022-04-24 12:32:22.661 DEBUG 12500 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [[User (id=100000, email=user@yandex.ru, name=User, enabled=true, roles=[ROLE_USER]), User (id=100001 (truncated)...]
+2022-04-24 12:32:22.662 DEBUG 12500 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2022-04-24 12:32:23.972 DEBUG 12500 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/base/rest/admin/users", parameters={}
+2022-04-24 12:32:23.972 DEBUG 12500 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to ru.base.web.user.AdminRestController#getAll()
+2022-04-24 12:32:23.973  INFO 12500 --- [http-nio-8080-exec-1] ru.base.web.user.AdminRestController     : It's work!
+2022-04-24 12:32:23.973  INFO 12500 --- [http-nio-8080-exec-1] ru.base.web.user.AdminRestController     : getAll
+2022-04-24 12:32:23.981 DEBUG 12500 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json]
+2022-04-24 12:32:23.981 DEBUG 12500 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [[User (id=100000, email=user@yandex.ru, name=User, enabled=true, roles=[ROLE_USER]), User (id=100001 (truncated)...]
+2022-04-24 12:32:23.982 DEBUG 12500 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK

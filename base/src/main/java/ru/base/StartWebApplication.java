@@ -1,21 +1,30 @@
 package ru.base;
 
+
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+//import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 
-@SpringBootApplication
+
+@Configuration
+@EnableAutoConfiguration
+@ComponentScan
 @ImportResource("classpath:spring/spring-app.xml")
 public class StartWebApplication extends SpringBootServletInitializer {
-
+              
+    
     public static void main(String[] args) {
         SpringApplication.run(StartWebApplication.class, args);
-    }
+    } 
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        System.out.println("Running the spring");
         return builder.sources(StartWebApplication.class);
     }
 }

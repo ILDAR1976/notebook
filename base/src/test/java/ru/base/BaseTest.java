@@ -32,11 +32,12 @@ class BaseTest {
 
     @Test
     void shouldServeWebapp() {
-		  String url = "http://user:password@localhost:" + port + "/"; 
+		  String url = "http://localhost:" + port + "/base/"; 
           firefoxDriver.get(url);
+          var res = firefoxDriver.findElement(By.cssSelector(".card-title")).getText();
 		  assertThat(firefoxDriver.findElement(By.
-		  cssSelector(".card.highlight-card span")).getText())
-		  .isEqualTo("angular app is running!");
+		  cssSelector(".card-title")).getText())
+		  .isEqualTo("angular");
     }
 
     @AfterEach
