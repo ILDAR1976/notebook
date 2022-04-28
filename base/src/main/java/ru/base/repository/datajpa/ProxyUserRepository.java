@@ -21,6 +21,7 @@ public interface ProxyUserRepository extends JpaRepository<User,Integer> {
     @Transactional
     User  save(User user);
 
+   
     @Override
     List<User> findAll(Sort sort);
 

@@ -32,6 +32,7 @@ public class AdminRestController extends AbstractUserController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<User> createWithLocation(@RequestBody User user) {
+        user.setId(null);
         User created =  super.create(user);
         URI uriOfNewResource = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path(REST_URL + "/{id}")
@@ -40,19 +41,22 @@ public class AdminRestController extends AbstractUserController {
     }
 
     @Override
+    @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    //@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
+    public void update(@RequestBody User user,@PathVariable int id) {
+        super.update(user, id);
+    }
+
+
+    @Override
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable int id) {
         super.delete(id);
     }
 
-    @Override
-    @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void update(@RequestBody User user,@PathVariable int id) {
-        super.update(user, id);
-    }
-
+    
     @Override
     @GetMapping("/by")
     public User getByMail(@RequestParam String email) {

@@ -5,7 +5,7 @@ import org.springframework.boot.gradle.plugin.SpringBootPlugin
 // Don't use that in your project
 buildscript {
     dependencies {
-        classpath("com.github.node-gradle:gradle-node-plugin:3.0.0")
+        classpath("com.github.node-gradle:gradle-node-plugin:3.2.1")
         classpath("org.apache.maven.plugins:maven-surefire-plugin:2.22.0")
         
     }
@@ -18,9 +18,7 @@ plugins {
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
 }
 
-
-
-val tomcatVersion = "10.0.20"
+group = "ru.base"
 
 repositories {
     mavenCentral()

@@ -35,7 +35,9 @@
               "src/favicon.ico",
               "src/assets"
             ],
+            "aot": true,
             "styles": [
+	      "node_modules/bootstrap/scss/bootstrap.scss",
               "src/styles.scss"
             ],
             "scripts": []

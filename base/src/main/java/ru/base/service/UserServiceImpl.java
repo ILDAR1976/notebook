@@ -1,5 +1,7 @@
 package ru.base.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
@@ -24,6 +26,9 @@ import static ru.base.util.ValidationUtil.checkNotFoundWithId;
 @Service("userService")
 //@Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class UserServiceImpl implements UserService {
+
+    protected final Logger LOG = LoggerFactory.getLogger(getClass());
+
     @Autowired
     private UserRepository repository;
 
@@ -68,11 +73,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @CacheEvict(value = "users",allEntries = true)
+    //@CacheEvict(value = "users",allEntries = true)
     public void update(User user) throws NotFoundException {
-        Assert.notNull(user, "user must not be null");
+        //Assert.notNull(user, "user must not be null");
         //checkNotFoundWithId(repository.save(user), user.getId());
-        prepareAndSave(user);
+        //prepareAndSave(user);
+        LOG.info("This is id={}",user.getId());
+        repository.save(user);
     }
 
     @Override
@@ -101,6 +108,7 @@ public class UserServiceImpl implements UserService {
 
     private User prepareAndSave(User user) {
         //return repository.save(prepareToSave(user, passwordEncoder));
+
         return null;
     }
 

@@ -2,7 +2,7 @@ import com.github.gradle.node.npm.task.NpxTask
 
 plugins {
   java
-  id("com.github.node-gradle.node") version "3.0.0"
+  id("com.github.node-gradle.node") version "3.2.1"
 }
 
 val lintTask = tasks.register<NpxTask>("lintAngular") {

@@ -37,7 +37,7 @@ class BaseTest {
           var res = firefoxDriver.findElement(By.cssSelector(".card-title")).getText();
 		  assertThat(firefoxDriver.findElement(By.
 		  cssSelector(".card-title")).getText())
-		  .isEqualTo("angular");
+		  .isEqualTo("Список пользователей");
     }
 
     @AfterEach
