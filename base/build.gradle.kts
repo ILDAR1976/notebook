@@ -1,8 +1,5 @@
 import org.springframework.boot.gradle.plugin.SpringBootPlugin
 
-
-// This is necessary to get Gradle use the plugin from its source instead of fetching it from the repository
-// Don't use that in your project
 buildscript {
     dependencies {
         classpath("com.github.node-gradle:gradle-node-plugin:3.2.1")
@@ -32,7 +29,7 @@ dependencies {
     // The basic project
     implementation(platform(SpringBootPlugin.BOM_COORDINATES))
     implementation(project(":angular"))
-    implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+    //implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
 
 
     // The database
@@ -49,7 +46,7 @@ dependencies {
 	
     // The tests
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testImplementation("org.springframework.security:spring-security-test")
+    //testImplementation("org.springframework.boot:spring-boot-security-tests")
     testImplementation("io.github.bonigarcia:webdrivermanager:4.3.1")
     testImplementation("org.seleniumhq.selenium:selenium-java")
     testImplementation("org.junit.jupiter:junit-jupiter-api")
@@ -58,6 +55,10 @@ dependencies {
 
     //The json
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-hibernate5")
+
+    //The security
+    implementation("org.springframework.boot:spring-boot-starter-security")
+
 }
 
 tasks.test {

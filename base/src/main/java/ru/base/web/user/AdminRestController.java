@@ -19,7 +19,6 @@ public class AdminRestController extends AbstractUserController {
     @Override
     @GetMapping
     public Collection<User> getAll() {
-        LOG.info("It's work!");
         return super.getAll();
     }
 
@@ -42,7 +41,6 @@ public class AdminRestController extends AbstractUserController {
 
     @Override
     @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-    //@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void update(@RequestBody User user,@PathVariable int id) {
         super.update(user, id);

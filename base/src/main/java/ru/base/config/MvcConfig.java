@@ -14,14 +14,14 @@ public class MvcConfig implements WebMvcConfigurer {
 
     protected final Logger LOG = LoggerFactory.getLogger(getClass());
 
-     @Override
+    @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry
           .addResourceHandler("/**")
-          .addResourceLocations("/resources/","classpath:/static/")
-          .setCachePeriod(3600)
+          .addResourceLocations("classpath:/static/")
+          .setCachePeriod(0)
           .resourceChain(true)
           .addResolver(new PathResourceResolver());	
-    } 
+    }  
  
 }

@@ -6,15 +6,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import ru.base.model.User;
 import ru.base.service.UserServiceImpl;
 import ru.base.to.UserTo;
+import ru.base.util.UserUtil;
 
 import java.util.Collection;
 
 import static ru.base.util.ValidationUtil.assureIdConsistent;
 import static ru.base.util.ValidationUtil.checkNew;
 
+
 //@Controller
 public abstract class AbstractUserController {
     protected final Logger LOG = LoggerFactory.getLogger(getClass());
+    public static final String EXCEPTION_DUPLICATE_EMAIL = "exception.user.duplicateEmail";
 
     @Autowired
     private UserServiceImpl service;
@@ -34,6 +37,12 @@ public abstract class AbstractUserController {
         checkNew(user);
         return service.create(user);
     }
+
+    public User create(UserTo userTo) {
+         return create(UserUtil.createNewFromTo(userTo));
+    }
+        
+
 
     public void delete(int id) {
         LOG.info("delete {}", id);

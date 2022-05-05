@@ -32,10 +32,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 @NamedQuery(name = Record.ALL_SORTED, query = "SELECT r FROM Record r WHERE r.user.id=:userId ORDER BY r.dateTime DESC")
 @NamedQuery(name = Record.DELETE, query = "DELETE FROM Record r WHERE r.id=:id AND r.user.id=:userId")
 @NamedQuery(name = Record.DELETE_ALL, query = "DELETE FROM Record i WHERE i.id=:userId")
-@NamedQuery(name = Record.GET_BETWEEN, query = "SELECT r FROM Record r " +
-            "WHERE r.user.id=:userId AND r.dateTime >= :startDate AND r.dateTime < :endDate ORDER BY r.dateTime DESC")
-//        @NamedQuery(name = UserMeal.UPDATE, query = "UPDATE Meal m SET m.dateTime = :datetime, m.calories= :calories," +
-//                "m.description=:desc where m.id=:id and m.user.id=:userId")
+@NamedQuery(name = Record.UPDATE, query = "UPDATE Record r SET r.dateTime = :datetime," +
+                "r.description=:desc where r.id=:id and r.user.id=:userId")
 @Entity
 @Table(name = "records", uniqueConstraints = {@UniqueConstraint(columnNames = {"user_id", "date_time"}, name = "records_unique_user_datetime_idx")})
 public class Record extends AbstractNamedEntity {
@@ -43,7 +41,7 @@ public class Record extends AbstractNamedEntity {
     public static final String ALL_SORTED = "Record.getAll";
     public static final String DELETE = "Record.delete";
     public static final String DELETE_ALL = "Record.delete_all";
-    public static final String GET_BETWEEN = "Record.getBetween";
+    public static final String UPDATE = "Record.update";
 
 
     @Column(name = "description", nullable = false)

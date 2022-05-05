@@ -1,14 +1,44 @@
-import { NgModule }      from '@angular/core';
+import { NgModule, Provider } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule }   from '@angular/forms';
-import { HttpClientModule }   from '@angular/common/http';
-import { AppComponent }   from './app.component';
-//import { APP_BASE_HREF } from '@angular/common';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { LoginPageComponent } from './auth/login-page/login-page.component';
+import { AuthInterceptor } from './auth/auth.interceptor';
+import { AuthService } from './auth/auth.service';
+import { AuthGuard } from './auth/auth.guard';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { UserComponent } from './components/user/user.component';
+import { UserService } from './service/user.service';
+
+const INTERCEPTOR_AUTH_PROVIDER: Provider = {
+  provide: HTTP_INTERCEPTORS,
+  multi: true,
+  useClass: AuthInterceptor
+};
 
 @NgModule({
-    imports:      [ BrowserModule, FormsModule, HttpClientModule],
-    declarations: [ AppComponent ],
-    //providers: [ {provide: APP_BASE_HREF, useValue: '/base'} ],
-    bootstrap:    [ AppComponent ]
+  declarations: [
+    AppComponent,
+    LoginPageComponent,
+    ErrorPageComponent,
+    UserComponent,
+  ],
+  imports: [
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserModule,
+    AppRoutingModule
+  ],
+  providers: [
+    INTERCEPTOR_AUTH_PROVIDER,
+    AuthService,
+    AuthGuard,
+    UserService
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

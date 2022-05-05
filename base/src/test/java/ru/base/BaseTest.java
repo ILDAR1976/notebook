@@ -32,12 +32,12 @@ class BaseTest {
 
     @Test
     void shouldServeWebapp() {
-		  String url = "http://localhost:" + port + "/base/"; 
+		  String url = "http://user:password@localhost:" + port + "/base/index.html"; 
           firefoxDriver.get(url);
-          var res = firefoxDriver.findElement(By.cssSelector(".card-title")).getText();
-		  assertThat(firefoxDriver.findElement(By.
-		  cssSelector(".card-title")).getText())
-		  .isEqualTo("Список пользователей");
+          //var res = firefoxDriver.findElement(By.cssSelector(".card-title")).getText();
+		  //assertThat(firefoxDriver.findElement(By.cssSelector(".card-title")).getText())
+          assertThat(firefoxDriver.getTitle())
+		  .isEqualTo("Notebook");
     }
 
     @AfterEach

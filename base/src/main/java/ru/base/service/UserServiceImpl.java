@@ -5,12 +5,17 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.context.annotation.Scope;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
-//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.Assert;
+import org.springframework.context.annotation.ScopedProxyMode;
 
+import ru.base.AuthorizedUser;
 import ru.base.model.User;
 import ru.base.repository.UserRepository;
 import ru.base.to.UserTo;
@@ -22,32 +27,32 @@ import java.util.Collection;
 
 import static ru.base.util.ValidationUtil.checkNotFound;
 import static ru.base.util.ValidationUtil.checkNotFoundWithId;
+import static ru.base.util.UserUtil.prepareToSave;
 
 @Service("userService")
-//@Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)
-public class UserServiceImpl implements UserService {
+@Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)
+public class UserServiceImpl implements UserService, UserDetailsService {
 
     protected final Logger LOG = LoggerFactory.getLogger(getClass());
 
     @Autowired
     private UserRepository repository;
-
-    //private final PasswordEncoder passwordEncoder;
+    
+    private final PasswordEncoder passwordEncoder;
 
    /*  @Autowired
     private CacheManager cacheManager; */
 
 
-    public UserServiceImpl(UserRepository repository) {
+    public UserServiceImpl(UserRepository repository, PasswordEncoder passwordEncoder) {
         this.repository = repository;
-        //this.passwordEncoder = passwordEncoder;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
     @CacheEvict(value = "users",allEntries = true)
     public User create(User user) {
-        return repository.save(user);
-        //return prepareAndSave(user);
+        return prepareAndSave(user);
     }
 
     @Override
@@ -77,14 +82,14 @@ public class UserServiceImpl implements UserService {
     public void update(User user) throws NotFoundException {
         //Assert.notNull(user, "user must not be null");
         //checkNotFoundWithId(repository.save(user), user.getId());
-        //prepareAndSave(user);
+        
         LOG.info("This is id={}",user.getId());
-        repository.save(user);
+        prepareAndSave(user);
     }
 
     @Override
     @CacheEvict(value = "users",allEntries = true)
-    //@Transactional
+    @Transactional
     public void update(UserTo userTo) throws NotFoundException {
         User user = get(userTo.getId());
         //repository.save(UserUtil.updateFromTo(user,userTo));
@@ -107,9 +112,16 @@ public class UserServiceImpl implements UserService {
     }
 
     private User prepareAndSave(User user) {
-        //return repository.save(prepareToSave(user, passwordEncoder));
+        return repository.save(prepareToSave(user, passwordEncoder));
+    }
 
-        return null;
+    @Override
+    public AuthorizedUser loadUserByUsername(String email) throws UsernameNotFoundException {
+        User user = repository.getByEmail(email.toLowerCase());
+        if (user == null) {
+            throw new UsernameNotFoundException("User " + email + " is not found");
+        }
+        return new AuthorizedUser(user);
     }
 
     

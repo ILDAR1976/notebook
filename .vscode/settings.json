@@ -21,6 +21,7 @@
         "**/bin":true,
         "**/build":true,
         "**/.vscode":true,
-        "**/.gradle":true,
-        "README.md":true
-}
+        "**/.gradle":true
+  
+    }
+} 
