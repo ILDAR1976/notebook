@@ -1,7 +1,10 @@
 package ru.base.repository.datajpa;
 
 import java.util.Collection;
+import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
@@ -13,13 +16,15 @@ import ru.base.repository.UserRepository;
 public class DataJpaUserRepositoryImpl implements UserRepository {
 
     private static final Sort SORT_NAME_EMAIL = Sort.by("name","email");
-
+    protected final Logger LOG = LoggerFactory.getLogger(getClass());
+    
     @Autowired
     ProxyUserRepository proxy;
 
 
     @Override
     public User save(User user) {
+        LOG.info("PASSWORD {} and USER {}", user.getPassword(), user.getEmail() );
         return proxy.save(user);
     }
 
@@ -35,7 +40,9 @@ public class DataJpaUserRepositoryImpl implements UserRepository {
 
     @Override
     public User get(int id) {
-        return proxy.findById(id).orElse(null);
+        User user = proxy.findById(id).orElse(null);
+        LOG.info("PASSWORD {} and USER {}", user.getPassword(), user.getEmail());
+        return user;
     }
 
     @Override

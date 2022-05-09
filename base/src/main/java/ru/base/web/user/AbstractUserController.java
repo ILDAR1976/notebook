@@ -14,7 +14,7 @@ import static ru.base.util.ValidationUtil.assureIdConsistent;
 import static ru.base.util.ValidationUtil.checkNew;
 
 
-//@Controller
+
 public abstract class AbstractUserController {
     protected final Logger LOG = LoggerFactory.getLogger(getClass());
     public static final String EXCEPTION_DUPLICATE_EMAIL = "exception.user.duplicateEmail";

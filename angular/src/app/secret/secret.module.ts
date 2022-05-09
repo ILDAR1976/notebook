@@ -5,18 +5,66 @@ import {
   CommonModule
 } from '@angular/common';
 import {
-  MainComponent
-} from './main/main.component';
-import {
   SecretRoutingModule
 } from './secret-routing.module';
+import {
+  UserComponent
+} from './components/user/user.component';
+import {
+  RecordComponent
+} from './components/record/record.component';
+import {
+  HeaderComponent
+} from './components/fragments/header/header.component';
+import {
+  FooterComponent
+} from './components/fragments/footer/footer.component';
+import {
+  FormsModule
+} from '@angular/forms';
+import {
+  UserService
+} from './service/user.service';
+import {
+  RecordService
+} from './service/record.service';
+import {
+  SecretComponent
+} from './secret.component';
+import {
+  DatePipe
+} from '@angular/common';
+import {
+  NavbarModule,
+  WavesModule,
+  ButtonsModule
+} from 'angular-bootstrap-md';
+
+
 
 
 @NgModule({
-  declarations: [MainComponent],
+  declarations: [
+    UserComponent,
+    RecordComponent,
+    HeaderComponent,
+    FooterComponent,
+    HeaderComponent,
+    FooterComponent,
+    SecretComponent
+  ],
   imports: [
     CommonModule,
-    SecretRoutingModule
-  ]
+    SecretRoutingModule,
+    FormsModule,
+    NavbarModule,
+    WavesModule,
+    ButtonsModule
+  ],
+  providers: [
+    UserService,
+    RecordService,
+    DatePipe
+  ],
 })
 export class SecretModule {}

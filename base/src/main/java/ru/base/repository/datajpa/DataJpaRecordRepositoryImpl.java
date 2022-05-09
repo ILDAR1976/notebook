@@ -33,7 +33,7 @@ public class DataJpaRecordRepositoryImpl implements RecordRepository {
 
     @Override
     public Record get(int id, int userId) {
-        return recordProxy.findById(id).filter(meal -> meal.getUser().getId() == userId).orElse(null);
+        return recordProxy.findById(id).filter(record -> record.getUser().getId() == userId).orElse(null);
     }
 
     @Override

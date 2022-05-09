@@ -6,9 +6,6 @@ import {
   Routes
 } from '@angular/router';
 import {
-  MainComponent
-} from './secret/main/main.component';
-import {
   LoginPageComponent
 } from './auth/login-page/login-page.component';
 import {
@@ -17,16 +14,8 @@ import {
 import {
   ErrorPageComponent
 } from './error-page/error-page.component';
-import {
-  UserComponent
-} from './components/user/user.component';
-
 
 const routes: Routes = [
-  {
-    path: 'userpage',
-    component: UserComponent
-  },
   {
     path: 'main',
     canLoad: [AuthGuard],

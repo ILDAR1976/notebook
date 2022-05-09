@@ -44,7 +44,7 @@ export class LoginPageComponent implements OnInit {
   }
 
   submit() {
-    
+
     if (this.form.invalid) {
       return;
     }
@@ -57,7 +57,7 @@ export class LoginPageComponent implements OnInit {
     this.authService.login(user)
       .subscribe(() => {
         this.form.reset();
-        this.router.navigate(['userpage']);
+        this.router.navigateByUrl('/main/secret');
       });
   }
 }

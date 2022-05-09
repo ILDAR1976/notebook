@@ -35,7 +35,6 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     protected final Logger LOG = LoggerFactory.getLogger(getClass());
 
-    @Autowired
     private UserRepository repository;
     
     private final PasswordEncoder passwordEncoder;
@@ -92,7 +91,6 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     @Transactional
     public void update(UserTo userTo) throws NotFoundException {
         User user = get(userTo.getId());
-        //repository.save(UserUtil.updateFromTo(user,userTo));
         prepareAndSave(UserUtil.updateFromTo(user, userTo));
     }
 

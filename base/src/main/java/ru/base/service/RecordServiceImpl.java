@@ -33,13 +33,13 @@ public class RecordServiceImpl implements RecordService {
     }
 
     @Override
-    public Record update(Record meal, int userId) {
-        return ExceptionUtil.check(repository.save(meal,userId),meal.getId());
+    public Record update(Record record, int userId) {
+        return ExceptionUtil.check(repository.save(record,userId),record.getId());
     }
 
     @Override
     public Record save(Record record, int userId) {
-        return repository.save(record,userId);
+        return repository.save(record, userId);
     }
 
 

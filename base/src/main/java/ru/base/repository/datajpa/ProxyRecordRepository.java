@@ -25,5 +25,7 @@ public interface ProxyRecordRepository extends JpaRepository<Record,Integer> {
     @Query("SELECT r FROM Record r WHERE r.user.id=:userId ORDER BY r.dateTime DESC")
     Collection<Record> getAll(@Param("userId") int userId);
 
+    
+    
    
 }

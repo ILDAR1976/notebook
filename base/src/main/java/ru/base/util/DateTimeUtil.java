@@ -12,6 +12,7 @@ public class DateTimeUtil {
     public static final String DATE_TIME_PATTERN = "yyyy-MM-dd HH:mm";
     public static final String DATE_TIME_PATTERN_FOR_GETTER = "yyyy-MM-dd HH:mm";
     public static final String DATE_TIME_PATTERN_FOR_SETTER = "yyyy-MM-dd'T'HH:mm";
+    public static final String DATE_TIME_PATTERN_FOR_SETTER2 = "YYYY-MM-DD'T'hh:mm:ss'TZD'";
     public static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern(DATE_TIME_PATTERN);
 
     public static final  LocalDate MIN_DATE = LocalDate.of(0,1,1);

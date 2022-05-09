@@ -19,7 +19,7 @@ public interface ProxyUserRepository extends JpaRepository<User,Integer> {
 
     @Override
     @Transactional
-    User  save(User user);
+    User save(User user);
 
    
     @Override

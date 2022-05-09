@@ -28,10 +28,9 @@ CREATE TABLE user_roles
 CREATE TABLE records (
   id          INTEGER PRIMARY KEY DEFAULT nextval('global_seq'),
   user_id     INTEGER   NOT NULL,
-  name        VARCHAR   NOT NULL,
-  date_time   TIMESTAMP NOT NULL,
+  date_time   TIMESTAMP WITH TIME ZONE NOT NULL,
   description TEXT      NOT NULL,
   FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
 );
-CREATE UNIQUE INDEX records_unique_user_datetime_idx
-  ON records (user_id, date_time);
+CREATE UNIQUE INDEX records_unique_idx
+  ON records (id);

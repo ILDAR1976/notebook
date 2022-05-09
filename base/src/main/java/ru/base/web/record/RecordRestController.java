@@ -8,7 +8,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import ru.base.model.Record;
 
 import java.util.Collection;
-import static org.slf4j.LoggerFactory.getLogger;
 
 import java.net.URI;
 
@@ -34,7 +33,9 @@ public class RecordRestController extends AbstractRecordController {
     @Override
     @GetMapping
     public Collection<Record> getAll() {
-        return super.getAll();
+        var records = super.getAll();
+        return records;
+        
     }
 
     @Override
@@ -46,6 +47,7 @@ public class RecordRestController extends AbstractRecordController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Record> createWithLocation(@RequestBody Record record) {
+        record.setId(null);
         Record created = super.create(record);
 
         URI uriOfNewResource = ServletUriComponentsBuilder.fromCurrentContextPath()

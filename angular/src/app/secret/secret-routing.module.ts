@@ -6,13 +6,44 @@ import {
   RouterModule
 } from '@angular/router';
 import {
-  MainComponent
-} from './main/main.component';
+  UserComponent
+} from './components/user/user.component';
+import {
+  RecordComponent
+} from './components/record/record.component';
+import {
+  HeaderComponent
+} from './components/fragments/header/header.component';
+import {
+  FooterComponent
+} from './components/fragments/footer/footer.component';
+import {
+  SecretComponent
+} from './secret.component';
 
-const routes: Routes = [{
-  path: '',
-  component: MainComponent
-}];
+const routes: Routes = [
+  {
+    path: 'users',
+    component: UserComponent
+  },
+  {
+    path: 'records',
+    component: RecordComponent
+  },
+  {
+    path: 'header',
+    component: HeaderComponent
+  },
+  {
+    path: 'footer',
+    component: FooterComponent
+  },
+  {
+    path: 'secret',
+    component: SecretComponent
+  }
+
+  ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

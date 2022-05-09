@@ -4,12 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
+
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
@@ -17,13 +16,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
 
-import ru.base.AuthorizedUser;
-import ru.base.model.Role;
-import ru.base.web.SecurityUtil;
 
 @Configuration
 @EnableWebSecurity
@@ -45,9 +38,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.antMatchers(HttpMethod.GET, "/index.html").permitAll()
 			.antMatchers(HttpMethod.GET, "/*.js").permitAll()
 			.antMatchers(HttpMethod.GET, "/*.gif").permitAll()
+			.antMatchers(HttpMethod.GET, "/*.png").permitAll()
 			.antMatchers(HttpMethod.GET, "/*.ico").permitAll()
 			.antMatchers(HttpMethod.GET, "/*.css").permitAll()
 			.antMatchers(HttpMethod.POST, "/login/**").permitAll()
+			.antMatchers(HttpMethod.GET, "/login/**").permitAll()
+			.antMatchers(HttpMethod.POST, "/rest/profile/**").access("hasAnyRole('USER','ADMIN')")
+			.antMatchers(HttpMethod.PUT, "/rest/profile/**").access("hasAnyRole('USER','ADMIN')")
+			.antMatchers(HttpMethod.PATCH, "/rest/profile/**").access("hasAnyRole('USER','ADMIN')")
+			.antMatchers(HttpMethod.DELETE, "/rest/profile/**").access("hasAnyRole('USER','ADMIN')")
 			.antMatchers(HttpMethod.GET, "/**").access("hasAnyRole('USER','ADMIN')")
 			.antMatchers(HttpMethod.POST, "/**").access("hasRole('ADMIN')")
 			.antMatchers(HttpMethod.PUT, "/**").access("hasRole('ADMIN')")
@@ -90,6 +89,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return PasswordEncoderFactories.createDelegatingPasswordEncoder();
+		//return new BCryptPasswordEncoder(12);
 	}
 
 	@Bean

@@ -6,9 +6,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import ru.base.model.User;
-
+import ru.base.model.Role;
 import java.net.URI;
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
@@ -31,6 +33,9 @@ public class AdminRestController extends AbstractUserController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<User> createWithLocation(@RequestBody User user) {
+        Set<Role> roles = new HashSet<>();
+        roles.add(Role.ROLE_USER);
+        user.setRoles(roles);
         user.setId(null);
         User created =  super.create(user);
         URI uriOfNewResource = ServletUriComponentsBuilder.fromCurrentContextPath()
@@ -43,6 +48,8 @@ public class AdminRestController extends AbstractUserController {
     @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void update(@RequestBody User user,@PathVariable int id) {
+        User userFromDB = super.get(id);
+        user.setRoles(userFromDB.getRoles());
         super.update(user, id);
     }
 

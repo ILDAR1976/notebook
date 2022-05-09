@@ -10,8 +10,6 @@ import { AuthInterceptor } from './auth/auth.interceptor';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth.guard';
 import { ErrorPageComponent } from './error-page/error-page.component';
-import { UserComponent } from './components/user/user.component';
-import { UserService } from './service/user.service';
 
 const INTERCEPTOR_AUTH_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -24,7 +22,6 @@ const INTERCEPTOR_AUTH_PROVIDER: Provider = {
     AppComponent,
     LoginPageComponent,
     ErrorPageComponent,
-    UserComponent,
   ],
   imports: [
     HttpClientModule,
@@ -36,8 +33,7 @@ const INTERCEPTOR_AUTH_PROVIDER: Provider = {
   providers: [
     INTERCEPTOR_AUTH_PROVIDER,
     AuthService,
-    AuthGuard,
-    UserService
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
