@@ -1,5 +1,5 @@
 import {
-  HttpClient,  HttpHeaders, 
+  HttpClient,  HttpHeaders,
 } from '@angular/common/http';
 import {
   Injectable
@@ -21,19 +21,17 @@ export class AuthService  {
 
   constructor(
     private httpClient: HttpClient
-    
   ) {}
 
   isAuth(): boolean {
     return true;
   }
-  
+
+
   login(user: {
     username: string,
     password: string
   }) : Observable<any> {
-    //let head = new HttpHeaders();
-    //head.set('Content-Type','application/x-www-form-urlencoded');
     const headers = {'Content-Type':'application/x-www-form-urlencoded'};
     const body = 'username=' + user.username.replace('@','%40') + '&password=' + user.password;
     return this.httpClient.post( `${environment.host}/login`, body, {
@@ -42,6 +40,13 @@ export class AuthService  {
     });
 
   }
-//return this.httpClient.post( `${environment.host}/login`, body, {
+
+  whoami() : Observable<any> {
+    return this.httpClient.post( `${environment.host}/user/whoami`, "", {
+      responseType: 'text',
+    });
+
+  }
+
   logout() {}
 }

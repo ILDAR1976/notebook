@@ -39,8 +39,12 @@ import {
   WavesModule,
   ButtonsModule
 } from 'angular-bootstrap-md';
-
-
+import {
+  FilterPipe
+} from './service/filter.pipe'
+import {
+  AuthService
+} from '../auth/auth.service';
 
 
 @NgModule({
@@ -51,7 +55,8 @@ import {
     FooterComponent,
     HeaderComponent,
     FooterComponent,
-    SecretComponent
+    SecretComponent,
+    FilterPipe
   ],
   imports: [
     CommonModule,
@@ -64,7 +69,9 @@ import {
   providers: [
     UserService,
     RecordService,
-    DatePipe
+    DatePipe,
+    HeaderComponent,
+    AuthService
   ],
 })
 export class SecretModule {}

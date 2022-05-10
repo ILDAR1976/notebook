@@ -22,11 +22,6 @@ const routes: Routes = [
     loadChildren: () => import('./secret/secret.module').then(m => m.SecretModule)
   },
   {
-    path: 'admin',
-    canLoad: [AuthGuard],
-    loadChildren: () => import('./admin/admin/admin.module').then(m => m.AdminModule)
-  },
-  {
     path: 'login',
     component: LoginPageComponent,
   },

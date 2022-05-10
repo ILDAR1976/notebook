@@ -1,11 +1,16 @@
 package ru.base.web.user;
 
+import ru.base.web.SecurityUtil;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import ru.base.model.User;
+import ru.base.AuthorizedUser;
 import ru.base.model.Role;
 import java.net.URI;
 import java.util.Collection;
@@ -17,7 +22,8 @@ import java.util.Set;
 @RequestMapping(value =  AdminRestController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
 public class AdminRestController extends AbstractUserController {
     public static final String REST_URL = "/rest/admin/users";
-
+    protected final Logger LOG = LoggerFactory.getLogger(getClass());
+    
     @Override
     @GetMapping
     public Collection<User> getAll() {
@@ -52,7 +58,6 @@ public class AdminRestController extends AbstractUserController {
         user.setRoles(userFromDB.getRoles());
         super.update(user, id);
     }
-
 
     @Override
     @DeleteMapping("/{id}")

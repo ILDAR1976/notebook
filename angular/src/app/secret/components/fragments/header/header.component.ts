@@ -1,20 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
-import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
-import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
-import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
-import { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';
-import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
-import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
-import { MdbPopoverModule } from 'mdb-angular-ui-kit/popover';
-import { MdbRadioModule } from 'mdb-angular-ui-kit/radio';
-import { MdbRangeModule } from 'mdb-angular-ui-kit/range';
-import { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';
-import { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';
-import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
-import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
-import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
-
+import { AuthService } from '../../../../auth/auth.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -22,10 +7,24 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  currentUserIsAdmin = false;
+
+  constructor(private authService : AuthService) {
+  }
 
   ngOnInit(): void {
     let a = 0;
+    this.authService.whoami()
+          .subscribe(data => {
+            let result = Number.parseInt(data);
+            console.log(result);
+            if (result == 1) {
+              this.currentUserIsAdmin = true;
+            }
+        });
+
   }
+
+
 
 }

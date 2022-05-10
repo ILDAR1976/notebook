@@ -37,10 +37,10 @@ public class AuthorizedUser extends org.springframework.security.core.userdetail
     }
 
 
-    public Collection<GrantedAuthority> getAuthorities(int a) {
+    public Collection<GrantedAuthority> getAuthorities() {
 
         Collection<GrantedAuthority>
-                outList =roles.stream().
+                outList = roles.stream().
                 map( x -> new GrantedAuthority() {
                     @Override
                     public String getAuthority() {

@@ -19,18 +19,20 @@ export class RecordComponent implements OnInit {
   @ViewChild('editTemplate', {static: false}) editTemplate: TemplateRef<any>|null = null;
 
   editedRecord: Record;
-
+  searchText = '';
 
   records: Array<Record>;
   isNewRecord: boolean = false;
   statusMessage: string = "";
   timeZoneOffset: number;
 
-  constructor(private router: Router, private service: RecordService, public datepipe: DatePipe) {
-    this.records = new Array<Record>();
-    let currentDate = new Date();
-    this.timeZoneOffset = currentDate.getTimezoneOffset();
-    this.editedRecord = new Record(0,currentDate,"");
+  constructor(private router: Router,
+    private service: RecordService,
+    private datepipe: DatePipe) {
+      this.records = new Array<Record>();
+      let currentDate = new Date();
+      this.timeZoneOffset = currentDate.getTimezoneOffset();
+      this.editedRecord = new Record(0,currentDate,"");
   }
 
   ngOnInit(): void {

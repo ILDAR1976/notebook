@@ -10,6 +10,7 @@ import { AuthInterceptor } from './auth/auth.interceptor';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth.guard';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const INTERCEPTOR_AUTH_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -28,7 +29,8 @@ const INTERCEPTOR_AUTH_PROVIDER: Provider = {
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [
     INTERCEPTOR_AUTH_PROVIDER,
