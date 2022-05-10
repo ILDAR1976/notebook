@@ -17,6 +17,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import ru.base.model.Role;
+
 
 @Configuration
 @EnableWebSecurity
@@ -42,19 +44,23 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.antMatchers(HttpMethod.GET, "/*.ico").permitAll()
 			.antMatchers(HttpMethod.GET, "/*.css").permitAll()
 			.antMatchers(HttpMethod.GET, "/assets/**").permitAll()
-			.antMatchers(HttpMethod.GET, "/error").permitAll()
-			.antMatchers(HttpMethod.POST, "/login/**").permitAll()
+			.antMatchers(HttpMethod.GET, "/error/**").permitAll()
 			.antMatchers(HttpMethod.GET, "/login/**").permitAll()
-			.antMatchers(HttpMethod.POST, "/user/whoami/**").access("hasAnyRole('USER','ADMIN')")
-			.antMatchers(HttpMethod.POST, "/rest/profile/**").access("hasAnyRole('USER','ADMIN')")
-			.antMatchers(HttpMethod.PUT, "/rest/profile/**").access("hasAnyRole('USER','ADMIN')")
-			.antMatchers(HttpMethod.PATCH, "/rest/profile/**").access("hasAnyRole('USER','ADMIN')")
-			.antMatchers(HttpMethod.DELETE, "/rest/profile/**").access("hasAnyRole('USER','ADMIN')")
 			.antMatchers(HttpMethod.GET, "/**").access("hasAnyRole('USER','ADMIN')")
-			.antMatchers(HttpMethod.POST, "/**").access("hasRole('ADMIN')")
-			.antMatchers(HttpMethod.PUT, "/**").access("hasRole('ADMIN')")
-			.antMatchers(HttpMethod.PATCH, "/**").access("hasRole('ADMIN')")
-			.antMatchers(HttpMethod.DELETE, "/**").access("hasRole('ADMIN')")
+
+			.antMatchers(HttpMethod.POST, "/login/**").permitAll()
+			.antMatchers(HttpMethod.POST, "/user/whoami/**").access("hasAnyRole('USER','ADMIN')")
+			.antMatchers(HttpMethod.POST, "rest/admin/users/**").access("hasRole('ADMIN')")
+			.antMatchers(HttpMethod.POST, "/rest/profile/**").access("hasAnyRole('USER','ADMIN')")
+
+			.antMatchers(HttpMethod.PUT, "/rest/profile/**").access("hasAnyRole('USER','ADMIN')")
+			.antMatchers(HttpMethod.PUT, "rest/admin/users/**").access("hasRole('ADMIN')")
+
+			.antMatchers(HttpMethod.PATCH, "/rest/profile/**").access("hasAnyRole('USER','ADMIN')")
+			.antMatchers(HttpMethod.PATCH, "rest/admin/**").access("hasRole('ADMIN')")
+			
+			.antMatchers(HttpMethod.DELETE, "/rest/profile/**").access("hasAnyRole('USER','ADMIN')")
+			.antMatchers(HttpMethod.DELETE, "rest/admin/**").access("hasRole('ADMIN')")
 			.anyRequest()
 			.authenticated()
 		.and()
