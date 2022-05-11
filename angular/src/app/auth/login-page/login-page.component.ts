@@ -60,4 +60,10 @@ export class LoginPageComponent implements OnInit {
         this.router.navigateByUrl('/main/secret');
       });
   }
+
+  register() {
+    this.router.navigateByUrl('/register');
+  }
+
+
 }

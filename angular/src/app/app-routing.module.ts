@@ -9,6 +9,9 @@ import {
   LoginPageComponent
 } from './auth/login-page/login-page.component';
 import {
+  RegisterPageComponent
+} from './auth/register-page/register-page.component';
+import {
   AuthGuard
 } from './auth/auth.guard';
 import {
@@ -24,6 +27,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginPageComponent,
+  },
+  {
+    path: 'register',
+    component: RegisterPageComponent,
   },
   {
     path: '',

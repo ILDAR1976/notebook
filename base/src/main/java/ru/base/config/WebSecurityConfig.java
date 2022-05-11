@@ -49,6 +49,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.antMatchers(HttpMethod.GET, "/**").access("hasAnyRole('USER','ADMIN')")
 
 			.antMatchers(HttpMethod.POST, "/login/**").permitAll()
+			.antMatchers(HttpMethod.POST, "/user/register/**").permitAll()
 			.antMatchers(HttpMethod.POST, "/user/whoami/**").access("hasAnyRole('USER','ADMIN')")
 			.antMatchers(HttpMethod.POST, "rest/admin/users/**").access("hasRole('ADMIN')")
 			.antMatchers(HttpMethod.POST, "/rest/profile/**").access("hasAnyRole('USER','ADMIN')")
@@ -77,18 +78,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
 	} 
-
-/*
-.loginPage("/index.html").loginProcessingUrl("/auth/login").permitAll()
-
-.loginPage("/auth/login").defaultSuccessUrl("/index.html").and()
-	.logout().logoutRequestMatcher(new AntPathRequestMatcher("/auth/logout","POST"))
-	.invalidateHttpSession(true)
-	.clearAuthentication(true)
-	.deleteCookies("JSESSIONID")
-	.logoutSuccessUrl("/auth/login").permitAll();
- */
-
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {

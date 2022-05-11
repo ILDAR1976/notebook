@@ -11,6 +11,7 @@ import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth.guard';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RegisterPageComponent } from './auth/register-page/register-page.component';
 
 const INTERCEPTOR_AUTH_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -23,6 +24,7 @@ const INTERCEPTOR_AUTH_PROVIDER: Provider = {
     AppComponent,
     LoginPageComponent,
     ErrorPageComponent,
+    RegisterPageComponent,
   ],
   imports: [
     HttpClientModule,

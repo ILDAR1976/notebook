@@ -1,6 +1,5 @@
 package ru.base.web.user;
 
-import ru.base.web.SecurityUtil;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import ru.base.model.User;
-import ru.base.AuthorizedUser;
 import ru.base.model.Role;
 import java.net.URI;
 import java.util.Collection;
@@ -66,10 +64,4 @@ public class AdminRestController extends AbstractUserController {
         super.delete(id);
     }
 
-    
-    @Override
-    @GetMapping("/by")
-    public User getByMail(@RequestParam String email) {
-        return super.getByMail(email);
-    }
 }

@@ -13,8 +13,6 @@ import java.util.Collection;
 import static ru.base.util.ValidationUtil.assureIdConsistent;
 import static ru.base.util.ValidationUtil.checkNew;
 
-
-
 public abstract class AbstractUserController {
     protected final Logger LOG = LoggerFactory.getLogger(getClass());
     public static final String EXCEPTION_DUPLICATE_EMAIL = "exception.user.duplicateEmail";
@@ -41,8 +39,6 @@ public abstract class AbstractUserController {
     public User create(UserTo userTo) {
          return create(UserUtil.createNewFromTo(userTo));
     }
-        
-
 
     public void delete(int id) {
         LOG.info("delete {}", id);
@@ -55,15 +51,13 @@ public abstract class AbstractUserController {
 
     public void update(User user, int id) {
         LOG.info("update {} with id={}", user, id);
-        //assureIdConsistent(user, id);
+        assureIdConsistent(user, id);
         service.update(user);
     }
 
     public void update(UserTo userTo, int id) {
         service.update(userTo);
     }
-
-
 
     public User getByMail(String email) {
         LOG.info("getByEmail {}", email);
