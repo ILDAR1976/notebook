@@ -338,3 +338,50 @@
 2022-05-11 12:03:11.739  INFO 17428 --- [http-nio-8080-exec-4] ru.base.web.record.RecordRestController  : getAll
 2022-05-11 12:03:19.760  INFO 17428 --- [http-nio-8080-exec-5] ru.base.web.record.RecordRestController  : update {100028Моя первая запись тут2022-05-11T09:03:03} with id=100028
 2022-05-11 12:03:19.792  INFO 17428 --- [http-nio-8080-exec-6] ru.base.web.record.RecordRestController  : getAll
+2022-05-11 12:45:44.894  INFO 9260 --- [main] ru.base.StartWebApplication              : Starting StartWebApplication using Java 17.0.2 on SENIOR with PID 9260 (F:\projects\java\spring\notebook\base\build\classes\java\main started by Job in F:\projects\java\spring\notebook\base)
+2022-05-11 12:45:44.902  INFO 9260 --- [main] ru.base.StartWebApplication              : No active profile set, falling back to 1 default profile: "default"
+2022-05-11 12:45:46.645  INFO 9260 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-11 12:45:46.766  INFO 9260 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 106 ms. Found 2 JPA repository interfaces.
+2022-05-11 12:45:47.942  INFO 9260 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-05-11 12:45:47.970  INFO 9260 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-11 12:45:47.971  INFO 9260 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-11 12:45:48.193  INFO 9260 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/base]   : Initializing Spring embedded WebApplicationContext
+2022-05-11 12:45:48.193  INFO 9260 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3208 ms
+2022-05-11 12:45:48.389  INFO 9260 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-05-11 12:45:48.726  INFO 9260 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-05-11 12:45:48.804  INFO 9260 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-11 12:45:48.925  INFO 9260 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-05-11 12:45:49.370  INFO 9260 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-11 12:45:49.686  INFO 9260 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-05-11 12:45:51.101  INFO 9260 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-11 12:45:51.336  INFO 9260 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-11 12:45:51.544  WARN 9260 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-11 12:45:52.732  INFO 9260 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will not secure any request
+2022-05-11 12:45:52.979  INFO 9260 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/base'
+2022-05-11 12:45:52.992  INFO 9260 --- [main] ru.base.StartWebApplication              : Started StartWebApplication in 8.932 seconds (JVM running for 9.69)
+2022-05-11 12:45:59.331  INFO 9260 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/base]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-11 12:45:59.332  INFO 9260 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-05-11 12:45:59.335  INFO 9260 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-05-11 12:45:59.741  WARN 9260 --- [http-nio-8080-exec-2] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [279] milliseconds.
+2022-05-11 12:46:07.832  INFO 9260 --- [http-nio-8080-exec-3] ru.base.web.user.UserRestController      : get 100007
+2022-05-11 12:46:07.842  INFO 9260 --- [http-nio-8080-exec-6] ru.base.web.record.RecordRestController  : getAll
+2022-05-11 12:46:07.915  INFO 9260 --- [http-nio-8080-exec-3] r.b.r.datajpa.DataJpaUserRepositoryImpl  : PASSWORD {bcrypt}$2a$10$CkwFX.w3muORVUHLC3PGe.CmPD1ZrllSFlG7M1BnJ2UFwbXn14cjW and USER u@u.u
+2022-05-11 12:46:12.877  INFO 9260 --- [http-nio-8080-exec-7] ru.base.web.record.RecordRestController  : update {100015Итоговая запись после сборки2022-05-10T06:18:06} with id=100015
+2022-05-11 12:46:12.996  INFO 9260 --- [http-nio-8080-exec-8] ru.base.web.record.RecordRestController  : getAll
+2022-05-11 12:48:09.276  INFO 9260 --- [http-nio-8080-exec-2] ru.base.web.record.RecordRestController  : create {nullЕще одна запись2022-05-11T09:48:01.520}
+2022-05-11 12:48:09.323  INFO 9260 --- [http-nio-8080-exec-4] ru.base.web.record.RecordRestController  : getAll
+2022-05-11 12:48:17.228  INFO 9260 --- [http-nio-8080-exec-5] ru.base.web.record.RecordRestController  : update {100029Еще одна запись2022-05-11T09:48:01} with id=100029
+2022-05-11 12:48:17.256  INFO 9260 --- [http-nio-8080-exec-3] ru.base.web.record.RecordRestController  : getAll
+2022-05-11 12:48:40.543  INFO 9260 --- [http-nio-8080-exec-6] ru.base.web.user.UserRestController      : get 100001
+2022-05-11 12:48:40.552  INFO 9260 --- [http-nio-8080-exec-6] r.b.r.datajpa.DataJpaUserRepositoryImpl  : PASSWORD {noop}admin and USER admin@gmail.com
+2022-05-11 12:48:40.554  INFO 9260 --- [http-nio-8080-exec-7] ru.base.web.record.RecordRestController  : getAll
+2022-05-11 12:48:43.898  INFO 9260 --- [http-nio-8080-exec-10] ru.base.web.user.AdminRestController     : getAll
+2022-05-11 12:48:43.928  INFO 9260 --- [http-nio-8080-exec-1] ru.base.web.user.UserRestController      : get 100001
+2022-05-11 12:48:43.934  INFO 9260 --- [http-nio-8080-exec-1] r.b.r.datajpa.DataJpaUserRepositoryImpl  : PASSWORD {noop}admin and USER admin@gmail.com
+2022-05-11 12:48:59.543  INFO 9260 --- [http-nio-8080-exec-2] ru.base.web.user.AdminRestController     : create User (id=null, email=tom@mail.ru, name=tom, enabled=true, roles=[ROLE_USER])
+2022-05-11 12:48:59.676  INFO 9260 --- [http-nio-8080-exec-2] r.b.r.datajpa.DataJpaUserRepositoryImpl  : PASSWORD {bcrypt}$2a$10$RmSVxaanOwmCdovXCGs1leBcBf3tKqezjYG7vUVkHdZSk3Ve6rURq and USER tom@mail.ru
+2022-05-11 12:48:59.728  INFO 9260 --- [http-nio-8080-exec-4] ru.base.web.user.AdminRestController     : getAll
+2022-05-11 12:49:15.982  INFO 9260 --- [http-nio-8080-exec-5] ru.base.web.user.AdminRestController     : delete 100027
+2022-05-11 12:49:16.015  INFO 9260 --- [http-nio-8080-exec-3] ru.base.web.user.AdminRestController     : getAll
+2022-05-11 12:49:23.033  INFO 9260 --- [http-nio-8080-exec-6] ru.base.web.user.AdminRestController     : delete 100030
+2022-05-11 12:49:23.055  INFO 9260 --- [http-nio-8080-exec-7] ru.base.web.user.AdminRestController     : getAll
