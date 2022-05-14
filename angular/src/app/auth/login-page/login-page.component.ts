@@ -66,9 +66,12 @@ export class LoginPageComponent implements OnInit {
   }
 
   logout() {
-    this.authService.logout();
-    this.form.reset();
-  }
+    this.authService.logout()
+    .subscribe(() => {
+      this.form.reset();
+      this.router.navigateByUrl('/');
+    });
 
+  }
 
 }

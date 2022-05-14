@@ -20,6 +20,7 @@ import {
   Token
 } from '../secret/model/token';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -82,19 +83,17 @@ export class AuthService  {
 
 
   whoami() : Observable<any> {
-
     return this.httpClient.post( this.sourceUrl + "/user/whoami", "", {
       responseType: 'text'
-
     });
-
   }
 
-  logout()  {
-    //const myHeaders = new HttpHeaders().set("Content-Type", "application/json");
-    this.httpClient.post(this.sourceUrl + "/api/auth/logout", "", {
+  logout() : Observable < any >  {
+    const myHeaders = new HttpHeaders().set("Content-Type", "application/json");
+    this.setToken(null);
+    return this.httpClient.post( this.sourceUrl + "/api/auth/logout", "", {
+      headers: myHeaders,
       responseType: 'text'
     });
-    this.setToken(null);
   }
 }

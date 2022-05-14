@@ -20,7 +20,7 @@ public class RootController {
         return new RedirectView("/base/index.html");
     } 
 
-    @GetMapping("")
+    @GetMapping("/error/**")
     public RedirectView redirectAllToLoginPage() {
         return new RedirectView("/base/index.html");
     } 

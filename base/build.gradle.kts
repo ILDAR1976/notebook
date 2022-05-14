@@ -29,8 +29,6 @@ dependencies {
     // The basic project
     implementation(platform(SpringBootPlugin.BOM_COORDINATES))
     implementation(project(":angular"))
-    //implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
-
 
     // The database
     implementation("org.postgresql:postgresql")
@@ -46,7 +44,6 @@ dependencies {
 	
     // The tests
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-    //testImplementation("org.springframework.boot:spring-boot-security-tests")
     testImplementation("io.github.bonigarcia:webdrivermanager:4.3.1")
     testImplementation("org.seleniumhq.selenium:selenium-java")
     testImplementation("org.junit.jupiter:junit-jupiter-api")
@@ -59,8 +56,6 @@ dependencies {
     //The security
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("io.jsonwebtoken:jjwt:0.9.1")
-
-
 }
 
 tasks.test {

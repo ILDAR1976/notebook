@@ -13,7 +13,7 @@
             "trace": true,
             "sourceMaps": true,
             "sourceMapPathOverrides": {
-                "*": "${webRoot}/*"
+                "*": "${webRoot}/angular/*"
               }
         },
         {
