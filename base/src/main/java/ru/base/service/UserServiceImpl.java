@@ -4,16 +4,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.context.annotation.Scope;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.context.annotation.ScopedProxyMode;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.context.annotation.ScopedProxyMode;
 
 import ru.base.AuthorizedUser;
 import ru.base.model.User;
@@ -29,33 +27,33 @@ import static ru.base.util.ValidationUtil.checkNotFound;
 import static ru.base.util.ValidationUtil.checkNotFoundWithId;
 import static ru.base.util.UserUtil.prepareToSave;
 
-@Service("userService")
-@Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)
+@Service("userServiceImpl")
+//@Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class UserServiceImpl implements UserService, UserDetailsService {
 
     protected final Logger LOG = LoggerFactory.getLogger(getClass());
 
-    private UserRepository repository;
+    private final UserRepository repository;
     
     private final PasswordEncoder passwordEncoder;
 
    /*  @Autowired
     private CacheManager cacheManager; */
 
-
+    @Autowired
     public UserServiceImpl(UserRepository repository, PasswordEncoder passwordEncoder) {
         this.repository = repository;
         this.passwordEncoder = passwordEncoder;
     }
 
     @Override
-    @CacheEvict(value = "users",allEntries = true)
+    //@CacheEvict(value = "users",allEntries = true)
     public User create(User user) {
         return prepareAndSave(user);
     }
 
     @Override
-    @CacheEvict(value = "users", allEntries = true)
+    //@CacheEvict(value = "users", allEntries = true)
     public void delete(int id) throws NotFoundException {
         checkNotFoundWithId(repository.delete(id), id);
     }
@@ -67,11 +65,12 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Override
     public User getByEmail(String email) throws NotFoundException {
-        return checkNotFound(repository.getByEmail(email), "email=" + email);
+        return checkNotFound(repository.getByEmail(email).orElseThrow(() ->
+            new UsernameNotFoundException("User doesn't exists")), "email=" + email);
     }
 
     @Override
-    @Cacheable("users")
+    //@Cacheable("users")
     public Collection<User> getAll() {
         return repository.getAll();
     }
@@ -87,7 +86,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
-    @CacheEvict(value = "users",allEntries = true)
+    //@CacheEvict(value = "users",allEntries = true)
     @Transactional
     public void update(UserTo userTo) throws NotFoundException {
         User user = get(userTo.getId());
@@ -115,7 +114,8 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Override
     public AuthorizedUser loadUserByUsername(String email) throws UsernameNotFoundException {
-        User user = repository.getByEmail(email.toLowerCase());
+        User user = repository.getByEmail(email.toLowerCase()).orElseThrow(() ->
+        new UsernameNotFoundException("User doesn't exists"));
         if (user == null) {
             throw new UsernameNotFoundException("User " + email + " is not found");
         }

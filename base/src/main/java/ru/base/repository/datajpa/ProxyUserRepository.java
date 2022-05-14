@@ -28,5 +28,5 @@ public interface ProxyUserRepository extends JpaRepository<User,Integer> {
     @Override
     Optional<User> findById(Integer integer);
 
-    User getByEmail(String email);
+    Optional<User> getByEmail(String email);
 }

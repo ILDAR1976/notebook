@@ -32,13 +32,16 @@ export class AuthInterceptor implements HttpInterceptor {
   ) {}
 
   intercept(request: HttpRequest < unknown > , next: HttpHandler): Observable < HttpEvent < unknown >> {
-    /* if (this.authService.isAuth()) {
+
+    if (this.authService.isAuth()) {
       request = request.clone({
-        //setHeaders: {
-          //'Content-Type':'application/x-www-form-urlencoded'
-        //}
+        setHeaders: {
+          //Authorization: `Bearer ${this.authService.token}`
+          Authorization: `${this.authService.token}`
+        }
       })
-    } */
+    }
+
     return next.handle(request)
       .pipe(
         catchError((error: HttpErrorResponse) => {

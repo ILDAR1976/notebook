@@ -5,12 +5,16 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Chrome for the angular debug",
-            "request": "launch",
             "type": "chrome",
+            "request": "launch",
+            "name": "Debuging in Chrome: Launch",
+            "webRoot": "${workspaceFolder}/angular",
             "url": "http://localhost:8080/base",
+            "trace": true,
             "sourceMaps": true,
-            "webRoot": "${workspaceFolder}"
+            "sourceMapPathOverrides": {
+                "*": "${webRoot}/*"
+              }
         },
         {
             "type": "java",
