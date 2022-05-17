@@ -9,12 +9,7 @@
             "request": "launch",
             "name": "Debuging in Chrome: Launch",
             "webRoot": "${workspaceFolder}/angular",
-            "url": "http://localhost:8080/base",
-            "trace": true,
-            "sourceMaps": true,
-            "sourceMapPathOverrides": {
-                "*": "${webRoot}/angular/*"
-              }
+            "url": "http://localhost:4200/base"
         },
         {
             "type": "java",

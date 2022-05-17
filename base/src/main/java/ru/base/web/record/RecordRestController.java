@@ -11,6 +11,8 @@ import java.util.Collection;
 
 import java.net.URI;
 
+
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping(value = RecordRestController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
 public class RecordRestController extends AbstractRecordController {

@@ -28,7 +28,7 @@ import ru.base.repository.UserRepository;
 import ru.base.to.AuthenticationRequestTo;
 import ru.base.web.user.security.JwtTokenProvider;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200","http://localhost:8080"})
 @RestController
 @RequestMapping(value = AuthenticationRestController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
 public class AuthenticationRestController {
@@ -44,7 +44,7 @@ public class AuthenticationRestController {
         this.jwtTokenProvider = jwtTokenProvider;
     }
 
-
+    
     @PostMapping(value = "/login", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> authenticate(@RequestBody AuthenticationRequestTo request){
         try {

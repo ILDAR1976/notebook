@@ -34,7 +34,6 @@ public class AdminRestController extends AbstractUserController {
         return super.get(id);
     }
 
-
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<User> createWithLocation(@RequestBody User user) {
         Set<Role> roles = new HashSet<>();

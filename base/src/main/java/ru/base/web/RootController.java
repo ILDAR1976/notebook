@@ -10,6 +10,7 @@ import org.springframework.web.servlet.view.RedirectView;
 @Controller
 public class RootController {
 
+    /* 
     @GetMapping("/login")
     public RedirectView getLoginPage() {
         return new RedirectView("/base/index.html");
@@ -28,12 +29,7 @@ public class RootController {
     @GetMapping("/error")
     public RedirectView redirectAllErrorsToLoginPage() {
         return new RedirectView("/base/index.html");
-    } 
+    }  */
 
-   /*  @PostMapping("/logout")
-    @ResponseBody
-    public RedirectView postLgout(HttpServletRequest request) {
-        return new RedirectView("/base/index.html");
-    } */
-
+   
 }

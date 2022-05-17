@@ -95,5 +95,7 @@
         "шаблон",
         "шаблонов",
         "Электронный"
-    ]
+    ],
+    "gradle.javaDebug.cleanOutput": true,
+    "gradle.nestedProjects": false
 } 

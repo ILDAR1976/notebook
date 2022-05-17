@@ -63,10 +63,10 @@ export class AuthService  {
     password: string
   }): Observable < any >   {
     let new_user: User = new User(0,"",user.username,user.password);
-    const myHeaders = new HttpHeaders().set("Content-Type", "application/json");
+    let header = new HttpHeaders().set("Content-Type", "application/json");
     return this.httpClient.post(this.sourceUrl + "/api/auth/login",
         JSON.stringify(new_user), {
-          headers: myHeaders,
+          headers: header,
           responseType: 'text'
         }).
         pipe(

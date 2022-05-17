@@ -20,3 +20,4 @@ gradlew
 *.jar
 *.exe
 *.log
+log
